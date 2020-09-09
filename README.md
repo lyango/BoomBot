@@ -1,2 +1,2 @@
 # BoomBot
- Boom Bot is a Valorant information bot developed for Discord made by Leon (lyango on GitHub / Lyang#5206 on Discord). It actively takes data/information from the official Valorant website, and will concurrently update based off Riot Games automatically.
+ Boom Bot is a information based bot developed for Discord users for Riot Games' Valorant players, made by Leon (lyango on Github / Lyang#5206 on Discord). The bot actively takes data from the official Valorant website, and will concurrently and automatically update based off Riot Games.
