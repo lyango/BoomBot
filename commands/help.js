@@ -4,6 +4,7 @@ const PREFIX = process.env.PREFIX;
 
 module.exports = {
     name: "help",
+    alias: ["h"],
     description: "returns all commands",
     run: async (client, message, args) => {
         return getCommands(client, message);
