@@ -21,10 +21,15 @@ module.exports = {
                     var weapons = json.result.data.allContentstackArsenal.nodes[0].weapons_list.weapons;
                     for (i = 0; i < weapons.length; i++) {
                         let name = weapons[i].weapon_name;
-                        let description = weapons[i].weapon_hover_description[0];
+                        //let description = weapons[i].weapon_hover_description[0];
                         let category = weapons[i].weapon_category_machine_name;
 
-                        weaponsEmbed.addField(name + ` | ${category}`, description);
+                        weaponsEmbed.addFields
+                        ({ 
+                            name: name, 
+                            value: category.charAt(0).toUpperCase() + category.slice(1), 
+                            inline: true 
+                        });
                     }
                 })
                 .then(weapons => {

@@ -21,10 +21,15 @@ module.exports = {
                     var agents = json.result.data.allContentstackAgentList.nodes[0].agent_list;
                     for (i = 0; i < agents.length; i++) {
                         let name = agents[i].title;
-                        let description = agents[i].description;
+                        //let description = agents[i].description;
                         let role = agents[i].role;
 
-                        agentsEmbed.addField(name + ` | ${role}`, description);
+                        agentsEmbed.addFields
+                        ({ 
+                            name: name, 
+                            value: role, 
+                            inline: true 
+                        });
                     }
                 })
                 .then(agents => {
@@ -57,10 +62,10 @@ module.exports = {
                     if (agentNum != null) {
                         let urlname = name.toLowerCase();
                         agentEmbed
-                            .setTitle(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase())
+                            .setTitle(name.toUpperCase())
                             .setURL(`https://playvalorant.com/en-us/agents/${urlname}/`)
                             .setThumbnail(agents[agentNum].role_icon.url)
-                            .addField(agents[agentNum].role, agents[agentNum].description)
+                            .addField(agents[agentNum].role.toUpperCase(), agents[agentNum].description)
                             .setImage(agents[agentNum].agent_image.url)
                             .addFields(
                                 {
