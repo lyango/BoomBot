@@ -57,6 +57,10 @@ client.on('message', message => {
     let cmd = messageArr[0];
     let args = messageArr.slice(1);
 
+    if(message.content.toLowerCase().startsWith(PREFIX) == false) {
+        return;
+    }
+
     let cfile = client.commands.get(cmd.slice(PREFIX.length));
     if(!cfile) {
         cfile = client.commands.get(client.aliases.get(cmd.slice(PREFIX.length)))
